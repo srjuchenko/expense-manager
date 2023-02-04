@@ -1,0 +1,19 @@
+.total-expenses {
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #222;
+  text-align: left;
+}
+
+.total {
+  color: rgba(153, 153, 153, 0.5);
+  font-size: 18px;
+}
+
+.expenses {
+  margin-top: 5px;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+}
