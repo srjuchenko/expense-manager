@@ -8,6 +8,7 @@ class Store {
         return new Promise((resolve, reject) => {
             const item = localStorage.getItem(this.name) ?? "[]";
             resolve(JSON.parse(item));
+            return JSON.parse(item)
         })
     }
     async addItem(data) {
