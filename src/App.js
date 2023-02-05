@@ -45,7 +45,9 @@ function App() {
 
         <PieChart />
       </div>
-      <ExpenseTable expenses={expenses} />
+      <div className="bottom">
+        <ExpenseTable expenses={expenses} />
+      </div>
     </div>
   );
 }
