@@ -7,12 +7,12 @@ class Store {
     });
   }
   async addItem(data) {
-    return new Promise((resolve, reject) => {
+    return new Promise(async(resolve, reject) => {
       if (!data) {
         reject();
         return;
       }
-      const items = this.getItems();
+      const items = await this.getItems();
       items.push(data);
       localStorage.setItem("expenses", JSON.stringify(items));
       resolve();
