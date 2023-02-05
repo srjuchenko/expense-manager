@@ -12,7 +12,7 @@ import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import FormGroup from '@mui/material/FormGroup';
 
-import Storage , { Data, Category } from "../../utils/Storage";
+import Storage , { Data, categories } from "../../utils/Storage";
 
 function NewExpensesDialog(props) {
   const data = new Data();
@@ -87,9 +87,7 @@ function NewExpensesDialog(props) {
                 onChange={handleChangeCategory}
                 style={{ width: "200px", margin: "5px" }}
             >
-                <MenuItem value={Category.A.name}>{Category.A.name}</MenuItem>
-                <MenuItem value={Category.B.name}>{Category.B.name}</MenuItem>
-                <MenuItem value={Category.C.name}>{Category.C.name}</MenuItem>
+              {categories.map(category=> <MenuItem value={category}>{category}</MenuItem>)}
             </Select>
             </FormControl>
             <br />

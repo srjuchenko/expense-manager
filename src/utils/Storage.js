@@ -33,15 +33,13 @@ export class Data {
   }
 }
 
-export class Category {
-  static A = new Category("A");
-  static B = new Category("B");
-  static C = new Category("C");
-
-  constructor(name) {
-    this.name = name;
-  }
-}
+export const categories = [
+  "Food",
+  "Car",
+  "Bills",
+  "Clothes",
+  "Pets"
+]
 
 const store = new Store();
 export default store;
