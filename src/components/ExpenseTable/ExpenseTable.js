@@ -7,63 +7,97 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
-  createData("Gingerbread1", 356, 16.0, 49, 3.9),
-  createData("Gingerbread2", 356, 16.0, 49, 3.9),
-  createData("Gingerbread3", 356, 16.0, 49, 3.9),
-  createData("Gingerbread4", 356, 16.0, 49, 3.9),
-  createData("Gingerbread5", 356, 16.0, 49, 3.9),
-  createData("Gingerbread6", 356, 16.0, 49, 3.9),
-  createData("Gingerbread7", 356, 16.0, 49, 3.9),
-  createData("Gingerbread8", 356, 16.0, 49, 3.9),
-  createData("Gingerbread9", 356, 16.0, 49, 3.9),
-];
-
 function ExpenseTable(props) {
-  return (
-    <TableContainer component={Paper}>
-      <Table
-        stickyHeader
-        sx={{ minWidth: "100%", height: "100%", overflowY: "auto" }}
-        aria-label="simple table"
+  const cellStyleRow = {
+    fontSize: "18px",
+    color: "#fff",
+  };
+  const cellStyleHead = {
+    color: "#999",
+    backgroundColor: "#222",
+    fontSize: 18,
+    textTransform: "uppercase",
+  };
+
+  const tableRows =
+    props.expenses.length > 0 ? (
+      props.expenses.map((row, i) => (
+        <TableRow
+          key={i}
+          sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+        >
+          <TableCell sx={cellStyleRow} component="th" scope="row">
+            {i + 1}
+          </TableCell>
+          <TableCell sx={cellStyleRow} align="left">
+            {"aaaaaaaaaaaaaaaaaaa"}
+          </TableCell>
+          <TableCell sx={cellStyleRow} align="center">
+            {row.cost}
+          </TableCell>
+          <TableCell sx={cellStyleRow} align="center">
+            {row.category}
+          </TableCell>
+          <TableCell sx={cellStyleRow} align="left">
+            {"01/01/2023"}
+          </TableCell>
+        </TableRow>
+      ))
+    ) : (
+      <TableRow
+        sx={{
+          "&:last-child td, &:last-child th": {
+            border: 0,
+            borderRadius: "15px",
+          },
+        }}
       >
-        <TableHead>
-          <TableRow>
-            <TableCell>#</TableCell>
-            <TableCell align="left">title</TableCell>
-            <TableCell align="left">cost</TableCell>
-            <TableCell align="left">category</TableCell>
-            <TableCell align="left">date</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {props.expenses.map((row, i) => (
-            <TableRow
-              key={i}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {i + 1}
+        <TableCell></TableCell>
+        <TableCell sx={cellStyleRow}>{"there are no expenses"}</TableCell>
+      </TableRow>
+    );
+
+  return (
+    <Paper
+      sx={{
+        width: "100%",
+        overflow: "hidden",
+        borderRadius: "15px",
+        borderColor: "#000",
+      }}
+    >
+      <TableContainer sx={{ maxHeight: "400px" }} component={Paper}>
+        <Table
+          stickyHeader
+          sx={{
+            minWidth: "100%",
+            maxHeight: 400,
+            overflowX: "auto",
+            backgroundColor: "#333",
+          }}
+          aria-label="expense table"
+        >
+          <TableHead>
+            <TableRow>
+              <TableCell sx={cellStyleHead}>#</TableCell>
+              <TableCell align="left" sx={cellStyleHead}>
+                title
               </TableCell>
-              <TableCell align="left">{row.title}</TableCell>
-              <TableCell align="left">{row.cost}</TableCell>
-              <TableCell align="left">{row.category}</TableCell>
-              <TableCell align="left">{row.date}</TableCell>
+              <TableCell sx={cellStyleHead} align="left">
+                cost
+              </TableCell>
+              <TableCell sx={cellStyleHead} align="left">
+                category
+              </TableCell>
+              <TableCell sx={cellStyleHead} align="left">
+                date
+              </TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>{tableRows}</TableBody>
+        </Table>
+      </TableContainer>
+    </Paper>
   );
 }
 
