@@ -39,6 +39,7 @@ function NewExpensesDialog(props) {
     await Storage.addItem(data)
     const items = await Storage.getItems()
     onUpdateExpense(items)
+    onClose()
   }
 
   return (
@@ -61,7 +62,7 @@ function NewExpensesDialog(props) {
             variant="standard" 
             type="number"
             InputProps={{
-                inputProps: { min: 0 }
+                inputProps: { min: 0, max: 10000 }
             }}
             onChange={handleChangeCost}
             style={{ width: "200px", margin: "5px" }}
