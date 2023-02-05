@@ -1,13 +1,44 @@
 .App {
-  padding: 15px;
+  padding: 30px;
   height: 800px;
   width: 600px;
   background-color: #121212;
   text-align: center;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .head {
+  display: flex;
+  height: 250px;
+  gap: 20px;
+}
+
+.head-left {
+  width: 35%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button {
+  text-transform: uppercase;
+  background-color: #03dac5;
   width: 100%;
-  height: 300px;
+  height: 100px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 30px #03dac56b;
+  border: none;
+  font-size: 16px;
+  color: #121212;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0px 0px 30px #03dac5ad;
 }

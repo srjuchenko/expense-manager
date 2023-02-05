@@ -1,0 +1,25 @@
+.pie-chart {
+  border-radius: 15px;
+  width: 65%;
+  gap: 10px;
+  background-color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.category-list {
+  list-style: none;
+  color: #fff;
+}
+
+.chart {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  background-color: #bb86fc;
+}
+
+li {
+  margin-top: 5px;
+}
