@@ -36,10 +36,20 @@ function NewExpensesDialog(props) {
   }
 
   const handleAddItem = async() => {
+    if (!validate()) {
+      alert("All fields must be filled !!")
+      return;
+    }
     await Storage.addItem(data)
     const items = await Storage.getItems()
     onUpdateExpense(items)
     onClose()
+  }
+
+  const validate = () => {
+    if (!data.category || !data.cost || !data.date || !data.title)
+      return false
+    return true;
   }
 
   return (
