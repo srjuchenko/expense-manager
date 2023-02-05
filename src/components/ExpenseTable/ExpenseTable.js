@@ -30,7 +30,7 @@ function ExpenseTable(props) {
             {i + 1}
           </TableCell>
           <TableCell sx={cellStyleRow} align="left">
-            {"aaaaaaaaaaaaaaaaaaa"}
+            {row.title}
           </TableCell>
           <TableCell sx={cellStyleRow} align="center">
             {row.cost}
@@ -39,7 +39,7 @@ function ExpenseTable(props) {
             {row.category}
           </TableCell>
           <TableCell sx={cellStyleRow} align="left">
-            {"01/01/2023"}
+            {row.date}
           </TableCell>
         </TableRow>
       ))
