@@ -4,8 +4,9 @@ import Storage from "./utils/Storage";
 import TotalExpenses from "./components/TotalExpenses/TotalExpenses";
 import ExpenseTable from "./components/ExpenseTable/ExpenseTable";
 import PieChart from "./components/PieChart/PieChart";
-import NewExpenses from './components/NewExpenses/NewExpenses'
+import NewExpense from "./components/NewExpense/NewExpense";
 import Filters from "./components/Filters/Filters";
+import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 
 function App() {
   const [expenses, setExpenses] = useState([]);
@@ -17,10 +18,9 @@ function App() {
   }, []);
 
   const updateExpenseHandler = (expense) => {
-    setExpenses(expense)
+    setExpenses(expense);
   };
-  
-  
+
   const filterExpenses = expenses;
   // show by year
   // show by month
@@ -32,8 +32,11 @@ function App() {
     <div className="App">
       <div className="head">
         <div className="head-left">
-          <TotalExpenses expenses={expenses.reduce((sum, a) => sum + Number(a.cost), 0)} />
-          <NewExpenses onUpdateExpense={updateExpenseHandler}  />
+          <CurrencyExchangeIcon fontSize="large" color="warning" />
+          <TotalExpenses
+            expenses={expenses.reduce((sum, a) => sum + Number(a.cost), 0)}
+          />
+          <NewExpense onUpdateExpense={updateExpenseHandler} />
         </div>
         <PieChart />
       </div>
@@ -46,6 +49,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;

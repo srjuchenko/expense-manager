@@ -1,0 +1,17 @@
+.button-style {
+  text-transform: uppercase;
+  background-color: #fb8217;
+  padding: 20px;
+  width: 220px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 15px #fb811738;
+  border: none;
+  font-size: 14px;
+  color: #121212;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.button-style:hover {
+  box-shadow: 0px 0px 15px #fb81177a;
+}

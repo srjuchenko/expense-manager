@@ -1,4 +1,3 @@
-import * as React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -6,12 +5,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import TableRows from "./TableRows";
+import "./ExpenseTable.css";
 
 function ExpenseTable(props) {
-  const cellStyleRow = {
-    fontSize: "18px",
-    color: "#fff",
-  };
   const cellStyleHead = {
     color: "#999",
     backgroundColor: "#222",
@@ -19,51 +16,12 @@ function ExpenseTable(props) {
     textTransform: "uppercase",
   };
 
-  const tableRows =
-    props.expenses.length > 0 ? (
-      props.expenses.map((row, i) => (
-        <TableRow
-          key={i}
-          sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-        >
-          <TableCell sx={cellStyleRow} component="th" scope="row">
-            {i + 1}
-          </TableCell>
-          <TableCell sx={cellStyleRow} align="left">
-            {row.title}
-          </TableCell>
-          <TableCell sx={cellStyleRow} align="center">
-            {row.cost}
-          </TableCell>
-          <TableCell sx={cellStyleRow} align="center">
-            {row.category}
-          </TableCell>
-          <TableCell sx={cellStyleRow} align="left">
-            {row.date}
-          </TableCell>
-        </TableRow>
-      ))
-    ) : (
-      <TableRow
-        sx={{
-          "&:last-child td, &:last-child th": {
-            border: 0,
-            borderRadius: "15px",
-          },
-        }}
-      >
-        <TableCell></TableCell>
-        <TableCell sx={cellStyleRow}>{"there are no expenses"}</TableCell>
-      </TableRow>
-    );
-
   return (
     <Paper
       sx={{
         width: "100%",
         overflow: "hidden",
         borderRadius: "15px",
-        borderColor: "#000",
       }}
     >
       <TableContainer sx={{ maxHeight: "400px" }} component={Paper}>
@@ -83,10 +41,10 @@ function ExpenseTable(props) {
               <TableCell align="left" sx={cellStyleHead}>
                 title
               </TableCell>
-              <TableCell sx={cellStyleHead} align="left">
+              <TableCell sx={cellStyleHead} align="center">
                 cost
               </TableCell>
-              <TableCell sx={cellStyleHead} align="left">
+              <TableCell sx={cellStyleHead} align="center">
                 category
               </TableCell>
               <TableCell sx={cellStyleHead} align="left">
@@ -94,7 +52,9 @@ function ExpenseTable(props) {
               </TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>{tableRows}</TableBody>
+          <TableBody>
+            <TableRows expenses={props.expenses} />
+          </TableBody>
         </Table>
       </TableContainer>
     </Paper>

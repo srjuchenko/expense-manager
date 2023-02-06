@@ -25,24 +25,6 @@
   justify-content: space-between;
 }
 
-button {
-  text-transform: uppercase;
-  background-color: #03dac5;
-  width: 100%;
-  
-  border-radius: 15px;
-  box-shadow: 0px 0px 30px #03dac56b;
-  border: none;
-  font-size: 16px;
-  color: #121212;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-button:hover {
-  box-shadow: 0px 0px 30px #03dac5ad;
-}
-
 .bottom {
   height: 400px;
   width: 100%;
