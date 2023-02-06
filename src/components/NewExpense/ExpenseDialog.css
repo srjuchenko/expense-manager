@@ -1,0 +1,12 @@
+.MuiInputBase-input {
+  color: #fff !important;
+  font-size: 22px !important;
+}
+
+.MuiInputBase-input::selection {
+  color: #fff !important;
+}
+
+#category-label {
+  color: #000;
+}
