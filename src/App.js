@@ -5,6 +5,7 @@ import TotalExpenses from "./components/TotalExpenses/TotalExpenses";
 import ExpenseTable from "./components/ExpenseTable/ExpenseTable";
 import PieChart from "./components/PieChart/PieChart";
 import NewExpense from "./components/NewExpense/NewExpense";
+import Filters from "./components/Filters/Filters";
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
           <NewExpense onUpdateExpense={updateExpenseHandler} />
         </div>
         <PieChart />
+      </div>
+      <div className="filters">
+        <Filters onUpdateExpense={updateExpenseHandler} />
       </div>
       <div className="bottom">
         <ExpenseTable expenses={expenses} />
