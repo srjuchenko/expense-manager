@@ -5,6 +5,7 @@ import TotalExpenses from "./components/TotalExpenses/TotalExpenses";
 import ExpenseTable from "./components/ExpenseTable/ExpenseTable";
 import PieChart from "./components/PieChart/PieChart";
 import NewExpenses from './components/NewExpenses/NewExpenses'
+import Filters from "./components/Filters/Filters";
 
 function App() {
   const [expenses, setExpenses] = useState([]);
@@ -35,6 +36,9 @@ function App() {
           <NewExpenses onUpdateExpense={updateExpenseHandler}  />
         </div>
         <PieChart />
+      </div>
+      <div className="filters">
+        <Filters onUpdateExpense={updateExpenseHandler} />
       </div>
       <div className="bottom">
         <ExpenseTable expenses={expenses} />
