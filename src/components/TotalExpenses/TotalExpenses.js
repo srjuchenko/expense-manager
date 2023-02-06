@@ -3,7 +3,6 @@ import "./TotalExpenses.css";
 /**
  *
  * @param {number} total expenses
- *
  * @returns component that shows the total expenses
  */
 
