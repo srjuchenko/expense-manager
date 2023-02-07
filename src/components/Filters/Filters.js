@@ -14,9 +14,9 @@ const clear = async (onUpdateExpense, setValue) => {
 
 const updateFilter = async (onUpdateExpense, value) => {
   let data = await Storage.getItems();
-  if (value.year != -1)
-    data = data.filter((d) => new Date(d.date).getYear() == value.year);
-  if (value.month != -1)
+  if (value.year !== -1)
+    data = data.filter((d) => new Date(d.date).getFullYear() == value.year);
+  if (value.month !== -1)
     data = data.filter((d) => new Date(d.date).getMonth() == value.month);
   onUpdateExpense(data);
 };
@@ -47,7 +47,10 @@ function Filters(props) {
               }}
               color="warning"
               style={selectStyles}
+              defaultValue={-1}
+              value={value.year}
             >
+              <MenuItem key={-1} value={-1}>Select</MenuItem>
               {YEARS.map((year) => (
                 <MenuItem key={year} value={year}>
                   {year}
@@ -70,7 +73,10 @@ function Filters(props) {
               }}
               color="warning"
               style={selectStyles}
+              defaultValue={-1}
+              value={value.month}
             >
+              <MenuItem key={-1} value={-1}>Select</MenuItem>
               {MONTHS.map((month, index) => (
                 <MenuItem value={index} key={month}>{month}</MenuItem>
               ))}

@@ -36,7 +36,7 @@ function tableRows(props) {
           {row.category}
         </TableCell>
         <TableCell sx={cellStyleRow} align="left">
-          {row.date}
+          { new Date(row.date).toLocaleDateString("he-IL") }
         </TableCell>
       </TableRow>
     ));
