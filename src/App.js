@@ -21,13 +21,6 @@ function App() {
     setExpenses(expense);
   };
 
-  const filterExpenses = expenses;
-  // show by year
-  // show by month
-
-  const onYearHandler = () => {
-    // filterExpenses = filterExpenses.map(x=> x.)
-  };
   return (
     <div className="App">
       <div className="head">

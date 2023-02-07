@@ -72,7 +72,7 @@ function Filters(props) {
               style={selectStyles}
             >
               {MONTHS.map((month, index) => (
-                <MenuItem value={index}>{month}</MenuItem>
+                <MenuItem value={index} key={month}>{month}</MenuItem>
               ))}
             </Select>
           </FormControl>

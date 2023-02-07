@@ -42,7 +42,7 @@ function ExpenseDialog(props) {
     await Storage.addItem(data);
     const items = await Storage.getItems();
     onUpdateExpense(items);
-    onClose();
+    onClose(true);
   };
 
   const validate = () => {
@@ -84,7 +84,7 @@ function ExpenseDialog(props) {
             variant="standard"
             type="number"
             InputProps={{
-              inputProps: { min: 0, max: 10000 },
+              inputProps: { min: 0, max: 10000 }
             }}
             color="warning"
             onChange={handleChangeCost}
