@@ -7,13 +7,13 @@ class Store {
     });
   }
   async addItem(data) {
-    return new Promise(async(resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       if (!data) {
         reject();
         return;
       }
       const items = await this.getItems();
-      items.push(data);
+      items.unshift(data);
       localStorage.setItem("expenses", JSON.stringify(items));
       resolve();
     });
@@ -33,13 +33,7 @@ export class Data {
   }
 }
 
-export const categories = [
-  "Food",
-  "Car",
-  "Bills",
-  "Clothes",
-  "Pets"
-]
+export const categories = ["Food", "Car", "Bills", "Clothes", "Pets"];
 
 const store = new Store();
 export default store;

@@ -1,12 +1,8 @@
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
+import { cellStyleRow } from "../../utils/inlinestyles";
 
 function tableRows(props) {
-  const cellStyleRow = {
-    fontSize: "18px",
-    color: "#fff",
-  };
-
   if (props.expenses.length === 0) {
     return (
       <TableRow

@@ -1,5 +1,30 @@
 .filters {
-    border: 1px solid gray;
-    padding: 5px;
-    color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.my-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 120px;
+  padding: 20px;
+  border-radius: 50px;
+  border-color: #fb8217;
+  color: #fb8217;
+  background-color: #121212;
+}
+
+.my-btn:hover {
+  cursor: pointer;
 }

@@ -6,16 +6,10 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import TableRows from "./TableRows";
+import { cellStyleHead } from "../../utils/inlinestyles";
 import "./ExpenseTable.css";
 
 function ExpenseTable(props) {
-  const cellStyleHead = {
-    color: "#999",
-    backgroundColor: "#222",
-    fontSize: 18,
-    textTransform: "uppercase",
-  };
-
   return (
     <Paper
       sx={{
@@ -24,12 +18,12 @@ function ExpenseTable(props) {
         borderRadius: "15px",
       }}
     >
-      <TableContainer sx={{ maxHeight: "400px" }} component={Paper}>
+      <TableContainer sx={{ maxHeight: "350px" }} component={Paper}>
         <Table
           stickyHeader
           sx={{
             minWidth: "100%",
-            maxHeight: 400,
+            maxHeight: 350,
             overflowX: "auto",
             backgroundColor: "#333",
           }}
