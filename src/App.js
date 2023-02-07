@@ -32,7 +32,10 @@ function App() {
     <div className="App">
       <div className="head">
         <div className="head-left">
-          <CurrencyExchangeIcon fontSize="large" color="warning" />
+          <div className="app-icon">
+            <CurrencyExchangeIcon fontSize="large" color="warning" />
+            <h1 className="app-title">Expense Manager</h1>
+          </div>
           <TotalExpenses
             expenses={expenses.reduce((sum, a) => sum + Number(a.cost), 0)}
           />
