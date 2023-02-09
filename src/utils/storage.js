@@ -1,9 +1,12 @@
+/*
+  Moshe Frankipour 206196693
+  Sergey Juchenko 319365102
+*/
 class Storage {
   async getItems() {
     return new Promise((resolve, reject) => {
       const item = localStorage.getItem("expenses") ?? "[]";
       resolve(JSON.parse(item));
-      // return JSON.parse(item);
     });
   }
   async addItem(data) {

@@ -1,3 +1,7 @@
+/*
+  Moshe Frankipour 206196693
+  Sergey Juchenko 319365102
+*/
 export const MONTHS = [
   "January",
   "February",

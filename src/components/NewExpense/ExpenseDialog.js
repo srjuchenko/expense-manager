@@ -1,3 +1,7 @@
+/*
+  Moshe Frankipour 206196693
+  Sergey Juchenko 319365102
+*/
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";

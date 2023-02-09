@@ -1,3 +1,7 @@
+/*
+  Moshe Frankipour 206196693
+  Sergey Juchenko 319365102
+*/
 import "./Chart.css";
 import { CATEGORIES } from "../../utils/consts";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';

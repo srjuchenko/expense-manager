@@ -1,3 +1,7 @@
+/*
+  Moshe Frankipour 206196693
+  Sergey Juchenko 319365102
+*/
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import { cellStyleRow } from "../../utils/inlinestyles";
@@ -36,7 +40,7 @@ function tableRows(props) {
           {row.category}
         </TableCell>
         <TableCell sx={cellStyleRow} align="left">
-          { new Date(row.date).toLocaleDateString("he-IL") }
+          {new Date(row.date).toLocaleDateString("he-IL")}
         </TableCell>
       </TableRow>
     ));
