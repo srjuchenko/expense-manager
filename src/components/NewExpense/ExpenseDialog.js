@@ -102,6 +102,7 @@ function ExpenseDialog(props) {
               style={inputInlineStyles}
               color="warning"
               variant="outlined"
+              defaultValue=""
             >
               {CATEGORIES.map((category) => (
                 <MenuItem key={category} value={category}>
