@@ -20,3 +20,30 @@ export const cellStyleRow = {
   fontSize: "18px",
   color: "#fff",
 };
+
+export const btnStyle = {
+  width: "200px",
+  margin: "10px auto",
+  backgroundColor: "#222",
+  borderRadius: "10px",
+}
+
+export const inputInlineStyles = {
+  width: "300px",
+  margin: "5px",
+  fontSize: "22px"
+}
+
+export const dialogStyle = {
+  width: "400px",
+  backgroundColor: "#666",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+}
+
+export const dialogTitleStyle = {
+  backgroundColor: "#333",
+  textAlign: "center",
+  color: "#fff"
+}

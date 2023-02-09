@@ -11,12 +11,12 @@ import FormGroup from "@mui/material/FormGroup";
 import Button from "@mui/material/Button";
 import Storage, { Data } from "../../utils/storage";
 import { CATEGORIES } from "../../utils/consts";
+import { btnStyle, inputInlineStyles, dialogStyle, dialogTitleStyle } from "../../utils/inlinestyles";
 import "./ExpenseDialog.css";
 
 function ExpenseDialog(props) {
   const data = new Data();
   const { onClose, open, onUpdateExpense } = props;
-  const inputInlineStyles = { width: "300px", margin: "5px", fontSize: "22px" };
 
   const handleClose = () => {
     onClose();
@@ -47,25 +47,20 @@ function ExpenseDialog(props) {
   };
 
   const validate = () => {
-    if (!data.category || !data.cost || !data.date || !data.title) return false;
+    if (!data.category || !data.cost || !data.date || !data.title)
+      return false;
     return true;
   };
 
   return (
     <Dialog onClose={handleClose} open={open}>
       <DialogTitle
-        style={{ backgroundColor: "#333", textAlign: "center", color: "#fff" }}
+        style={dialogTitleStyle}
       >
         Add New Expense
       </DialogTitle>
       <DialogContent
-        style={{
-          width: "400px",
-          backgroundColor: "#666",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
+        style={dialogStyle}
         dividers
       >
         <FormGroup>
@@ -78,7 +73,6 @@ function ExpenseDialog(props) {
             style={inputInlineStyles}
             color="warning"
           />
-          <br />
           <TextField
             id="cost"
             label="Cost"
@@ -91,7 +85,6 @@ function ExpenseDialog(props) {
             onChange={handleChangeCost}
             style={inputInlineStyles}
           />
-          <br />
           <FormControl fullWidth>
             <InputLabel id="category-label">Category</InputLabel>
             <Select
@@ -111,7 +104,6 @@ function ExpenseDialog(props) {
               ))}
             </Select>
           </FormControl>
-          <br />
           <TextField
             id="date"
             type="date"
@@ -128,12 +120,7 @@ function ExpenseDialog(props) {
           onClick={handleAddItem}
           color="success"
           variant="contained"
-          style={{
-            width: "200px",
-            margin: "10px auto",
-            backgroundColor: "#222",
-            borderRadius: "10px",
-          }}
+          style={btnStyle}
         >
           Add
         </Button>

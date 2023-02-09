@@ -1,18 +1,18 @@
-import "./PieChart.css";
+import "./Chart.css";
 import { CATEGORIES } from "../../utils/consts";
-import { BarChart, Bar, Cell, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = (expenses) => {
   let data = []
   CATEGORIES.forEach(cat => {
-    const total = expenses.filter(expense=> expense.category == cat)
-    .reduce((sum, current) => sum + Number(current.cost), 0)
-    data.push({name: cat, total: total})
+    const total = expenses.filter(expense => expense.category == cat)
+      .reduce((sum, current) => sum + Number(current.cost), 0)
+    data.push({ name: cat, total: total })
   });
   return data
 }
 
-function PieChart(props) {
+function Chart(props) {
   return (
     <div className="pie-chart">
       <ResponsiveContainer width="100%" height="100%">
@@ -37,4 +37,4 @@ function PieChart(props) {
   );
 }
 
-export default PieChart;
+export default Chart;

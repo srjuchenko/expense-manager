@@ -3,7 +3,7 @@ import "./App.css";
 import Storage from "./utils/storage";
 import TotalExpenses from "./components/TotalExpenses/TotalExpenses";
 import ExpenseTable from "./components/ExpenseTable/ExpenseTable";
-import PieChart from "./components/PieChart/PieChart";
+import Chart from "./components/Chart/Chart";
 import NewExpense from "./components/NewExpense/NewExpense";
 import Filters from "./components/Filters/Filters";
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
@@ -38,7 +38,7 @@ function App() {
           />
           <NewExpense onUpdateExpense={updateExpenseHandler} />
         </div>
-        <PieChart expenses={expenses} />
+        <Chart expenses={expenses} />
       </div>
       <div className="filters">
         <Filters onUpdateExpense={updateExpenseHandler} />

@@ -51,7 +51,7 @@ function Filters(props) {
               value={value.year}
             >
               <MenuItem key={-1} value={-1}>
-                Select
+                All
               </MenuItem>
               {YEARS.map((year) => (
                 <MenuItem key={year} value={year}>
@@ -79,7 +79,7 @@ function Filters(props) {
               value={value.month}
             >
               <MenuItem key={-1} value={-1}>
-                Select
+                All
               </MenuItem>
               {MONTHS.map((month, index) => (
                 <MenuItem value={index} key={month}>

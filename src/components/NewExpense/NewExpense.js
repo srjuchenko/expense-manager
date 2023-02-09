@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import "./NewExpense.css";
 import ExpenseDialog from "./ExpenseDialog";
 import AlertMsg from "../AlertMsg/AlertMsg"
+import "./NewExpense.css";
 
 export default function NewExpenses(props) {
   const [open, setOpen] = useState(false);
@@ -16,15 +16,14 @@ export default function NewExpenses(props) {
   };
 
   useEffect(() => {
-      setTimeout(function () {
-        setShowMsg(false)
-      }, 3000);
+    setTimeout(function () {
+      setShowMsg(false)
+    }, 3000);
   }, [showMsg])
 
   return (
     <div>
       <AlertMsg show={showMsg} />
-
       <button className="button-style" onClick={handleClickOpen}>
         <div className="plus-icon"></div>
         Add New Expense
