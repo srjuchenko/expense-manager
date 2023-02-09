@@ -16,7 +16,6 @@ function App() {
    */
   useEffect(() => {
     (async () => {
-      console.log("use effect");
       let response = await Storage.getItems();
       setExpenses(response);
     })();

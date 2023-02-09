@@ -7,10 +7,8 @@ const data = (expenses) => {
   CATEGORIES.forEach(cat => {
     const total = expenses.filter(expense=> expense.category == cat)
     .reduce((sum, current) => sum + Number(current.cost), 0)
-    console.log('total', total)
     data.push({name: cat, total: total})
   });
-  console.log('data', data)
   return data
 }
 
