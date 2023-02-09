@@ -39,7 +39,7 @@ function App() {
           />
           <NewExpense onUpdateExpense={updateExpenseHandler} />
         </div>
-        <PieChart />
+        <PieChart expenses={expenses} />
       </div>
       <div className="filters">
         <Filters onUpdateExpense={updateExpenseHandler} />
