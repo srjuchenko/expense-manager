@@ -6,3 +6,7 @@
   align-items: center;
   justify-content:center;
 }
+
+.recharts-legend-item {
+  display: none !important;
+}
