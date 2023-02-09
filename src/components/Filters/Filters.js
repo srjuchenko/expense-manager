@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import Storage from "../../utils/Storage";
+import Storage from "../../utils/storage";
 import "./Filters.css";
 import Box from "@mui/material/Box";
 import { MONTHS, YEARS } from "../../utils/consts";
@@ -50,7 +50,9 @@ function Filters(props) {
               defaultValue={-1}
               value={value.year}
             >
-              <MenuItem key={-1} value={-1}>Select</MenuItem>
+              <MenuItem key={-1} value={-1}>
+                Select
+              </MenuItem>
               {YEARS.map((year) => (
                 <MenuItem key={year} value={year}>
                   {year}
@@ -76,9 +78,13 @@ function Filters(props) {
               defaultValue={-1}
               value={value.month}
             >
-              <MenuItem key={-1} value={-1}>Select</MenuItem>
+              <MenuItem key={-1} value={-1}>
+                Select
+              </MenuItem>
               {MONTHS.map((month, index) => (
-                <MenuItem value={index} key={month}>{month}</MenuItem>
+                <MenuItem value={index} key={month}>
+                  {month}
+                </MenuItem>
               ))}
             </Select>
           </FormControl>

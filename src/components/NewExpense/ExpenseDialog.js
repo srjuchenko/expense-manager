@@ -9,7 +9,8 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import FormGroup from "@mui/material/FormGroup";
 import Button from "@mui/material/Button";
-import Storage, { Data, categories } from "../../utils/Storage";
+import Storage, { Data } from "../../utils/storage";
+import { CATEGORIES } from "../../utils/consts";
 import "./ExpenseDialog.css";
 
 function ExpenseDialog(props) {
@@ -84,7 +85,7 @@ function ExpenseDialog(props) {
             variant="standard"
             type="number"
             InputProps={{
-              inputProps: { min: 0, max: 10000 }
+              inputProps: { min: 0, max: 10000 },
             }}
             color="warning"
             onChange={handleChangeCost}
@@ -102,7 +103,7 @@ function ExpenseDialog(props) {
               color="warning"
               variant="outlined"
             >
-              {categories.map((category) => (
+              {CATEGORIES.map((category) => (
                 <MenuItem key={category} value={category}>
                   {category}
                 </MenuItem>

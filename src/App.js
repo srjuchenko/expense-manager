@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Storage from "./utils/Storage";
+import Storage from "./utils/storage";
 import TotalExpenses from "./components/TotalExpenses/TotalExpenses";
 import ExpenseTable from "./components/ExpenseTable/ExpenseTable";
 import PieChart from "./components/PieChart/PieChart";
@@ -10,15 +10,20 @@ import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 
 function App() {
   const [expenses, setExpenses] = useState([]);
+
+  /**
+   * init data
+   */
   useEffect(() => {
     (async () => {
+      console.log("use effect");
       let response = await Storage.getItems();
       setExpenses(response);
     })();
   }, []);
 
-  const updateExpenseHandler = (expense) => {
-    setExpenses(expense);
+  const updateExpenseHandler = (expenses) => {
+    setExpenses(expenses);
   };
 
   return (
