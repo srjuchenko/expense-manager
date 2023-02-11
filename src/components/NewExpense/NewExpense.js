@@ -4,9 +4,14 @@
 */
 import { useState, useEffect } from "react";
 import ExpenseDialog from "./ExpenseDialog";
-import AlertMsg from "../AlertMsg/AlertMsg"
+import AlertMsg from "../AlertMsg/AlertMsg";
 import "./NewExpense.css";
 
+/**
+ *
+ * @param {setStateAction} props
+ * @returns button with add expense option
+ */
 export default function NewExpenses(props) {
   const [open, setOpen] = useState(false);
   const [showMsg, setShowMsg] = useState(false);
@@ -19,11 +24,12 @@ export default function NewExpenses(props) {
     setShowMsg(isSuccessful);
   };
 
+  // success message
   useEffect(() => {
     setTimeout(function () {
-      setShowMsg(false)
+      setShowMsg(false);
     }, 3000);
-  }, [showMsg])
+  }, [showMsg]);
 
   return (
     <div>

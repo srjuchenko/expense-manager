@@ -28,26 +28,29 @@ export const cellStyleRow = {
 export const btnStyle = {
   width: "200px",
   margin: "10px auto",
-  backgroundColor: "#222",
+  backgroundColor: "#121212",
   borderRadius: "10px",
-}
+  border: "1px solid #fb8217",
+};
 
 export const inputInlineStyles = {
+  marginTop: "20px",
   width: "300px",
   margin: "5px",
-  fontSize: "22px"
-}
+  fontSize: "22px",
+  color: "#fb8217",
+};
 
 export const dialogStyle = {
   width: "400px",
-  backgroundColor: "#666",
+  backgroundColor: "#222",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-}
+};
 
 export const dialogTitleStyle = {
-  backgroundColor: "#333",
+  backgroundColor: "#222",
   textAlign: "center",
-  color: "#fff"
-}
+  color: "#fb8217",
+};

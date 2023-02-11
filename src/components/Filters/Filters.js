@@ -10,31 +10,37 @@ import Box from "@mui/material/Box";
 import { MONTHS, YEARS } from "../../utils/consts";
 import { selectStyles, labelStyles } from "../../utils/inlinestyles";
 
-const clear = async (onUpdateExpense, setValue) => {
-  const data = await Storage.getItems();
-  onUpdateExpense(data);
-  setValue({ year: -1, month: -1 });
-};
-
-const updateFilter = async (onUpdateExpense, value) => {
-  let data = await Storage.getItems();
-  if (value.year !== -1)
-    data = data.filter((d) => new Date(d.date).getFullYear() == value.year);
-  if (value.month !== -1)
-    data = data.filter((d) => new Date(d.date).getMonth() == value.month);
-  onUpdateExpense(data);
-};
-
+/**
+ * @param {requestCallback} props
+ * @returns component with btns for filtering the data by month/year
+ */
 function Filters(props) {
   const [value, setValue] = useState({ year: -1, month: -1 });
+
+  // clear the filtering options and show all expenses
+  const clear = async (onUpdateExpense, setValue) => {
+    const data = await Storage.getItems();
+    onUpdateExpense(data);
+    setValue({ year: -1, month: -1 });
+  };
+
+  // show expenses by specific month/year
+  const updateFilter = async (onUpdateExpense, value) => {
+    let data = await Storage.getItems();
+    if (value.year !== -1)
+      data = data.filter((d) => new Date(d.date).getFullYear() == value.year);
+    if (value.month !== -1)
+      data = data.filter((d) => new Date(d.date).getMonth() == value.month);
+    onUpdateExpense(data);
+  };
 
   return (
     <div className="filters">
       <button
         onClick={() => clear(props.onUpdateExpense, setValue)}
-        className="my-btn"
+        className="my-btn show-all"
       >
-        SHOW ALL
+        SHOW ALL EXPENSES
       </button>
       <div className="filter-container">
         <Box sx={{ minWidth: 100 }}>

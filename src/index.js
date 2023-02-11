@@ -11,5 +11,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
+    <footer>© Sergey Juchenko | Moshe Frankipur - 2023 ©</footer>
   </React.StrictMode>
 );

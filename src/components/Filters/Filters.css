@@ -31,4 +31,10 @@
 
 .my-btn:hover {
   cursor: pointer;
+  box-shadow: inset 0 0 10px #fb811767;
+}
+
+.show-all {
+  margin-left: 20px;
+  width: 300px;
 }
