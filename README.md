@@ -1,4 +1,4 @@
-# Expense Manager
+# Expenses Manager
 
 <img src="./assets/page.jpeg" alt="page" />
 <img src="./assets/add-new-expense.jpeg" alt="add-new-expense" />
