@@ -36,7 +36,7 @@ function App() {
         <div className="head-left">
           <div className="app-icon">
             <CurrencyExchangeIcon fontSize="large" color="warning" />
-            <h1 className="app-title">Expense Manager</h1>
+            <h1 className="app-title">Expenses Manager</h1>
           </div>
           <TotalExpenses
             expenses={expenses.reduce((sum, a) => sum + Number(a.cost), 0)}
