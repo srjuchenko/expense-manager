@@ -1,5 +1,5 @@
 # Expenses Manager
-<div style="width:360px;max-width:100%;"><div style="height:0;padding-bottom:107.78%;position:relative;"><iframe width="360" height="388" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/7atbpq"></iframe></div><p><a href="https://imgflip.com/gif/7atbpq">via Imgflip</a></p></div>
+![image](https://imgflip.com/gif/7atbpq)
 ![image](https://user-images.githubusercontent.com/76474133/218277400-de15acc7-fc1f-4f67-83f4-9d77fb001916.png)
 ![image](https://user-images.githubusercontent.com/76474133/218277408-7334b3c8-4f76-4202-bd0c-64e1c361a8b4.png)
 
