@@ -12,7 +12,7 @@ function TotalExpenses(props) {
   return (
     <div className="total-expenses">
       <h1 className="total">Total Expenses</h1>
-      <h2 className="expenses">{props.expenses}$</h2>
+      <h2 className="expenses">{props.total}$</h2>
     </div>
   );
 }

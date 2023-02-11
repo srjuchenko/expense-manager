@@ -13,7 +13,7 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import FormGroup from "@mui/material/FormGroup";
 import Button from "@mui/material/Button";
-import Storage, { Data } from "../../utils/storage";
+import { Data } from "../../utils/storage";
 import { CATEGORIES } from "../../utils/consts";
 import {
   btnStyle,
@@ -54,14 +54,13 @@ function ExpenseDialog(props) {
   };
 
   // add new expense to local storage and upadates the state of expenses
-  const handleAddItem = async () => {
+  const handleAddItem = () => {
     if (!validate()) {
-      alert('All fields must be filled !!');
+      alert("All fields must be filled !!");
       return;
     }
-    await Storage.addItem(data);
-    const items = await Storage.getItems();
-    onUpdateExpense(items);
+
+    onUpdateExpense(data);
     onClose(true);
   };
 
