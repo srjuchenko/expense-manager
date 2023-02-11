@@ -3,7 +3,12 @@
 <!-- TODO -->
 <img src="#" alt="page" />
 
+## Component Tree
+
+<img src="./assets/component-tree.png" alt="component-tree" />
+
 ## Available Scripts
+
 This project was bootstrapped with **ReactJS**.\
 In the project directory, you can run:
 
@@ -28,13 +33,15 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 ## Demo
+
 Click -> [:desktop_computer:](https://expense-manager-hit.netlify.app/)
 
 ## Team
+
 > <a href="https://github.com/mfrankii"><kbd><img src="https://avatars.githubusercontent.com/u/88384146?s=30"/></kbd></a> &nbsp; Moshe Frankipour
 >
-> [Github](https://github.com/mfrankii) | [LinkedIn](https://www.linkedin.com/in/moshe-frank/) 
+> [Github](https://github.com/mfrankii) | [LinkedIn](https://www.linkedin.com/in/moshe-frank/)
 
 > <a href="https://github.com/srjuchenko"><kbd><img src="https://avatars.githubusercontent.com/u/76474133?s=30"/></kbd></a> &nbsp; Sergey Juchenko
 >
-> [Github](https://github.com/srjuchenko) | [LinkedIn](https://www.linkedin.com/in/sergey-juchenko/) 
+> [Github](https://github.com/srjuchenko) | [LinkedIn](https://www.linkedin.com/in/sergey-juchenko/)
