@@ -15,9 +15,18 @@ import FormGroup from "@mui/material/FormGroup";
 import Button from "@mui/material/Button";
 import Storage, { Data } from "../../utils/storage";
 import { CATEGORIES } from "../../utils/consts";
-import { btnStyle, inputInlineStyles, dialogStyle, dialogTitleStyle } from "../../utils/inlinestyles";
+import {
+  btnStyle,
+  inputInlineStyles,
+  dialogStyle,
+  dialogTitleStyle,
+} from "../../utils/inlinestyles";
 import "./ExpenseDialog.css";
 
+/**
+ * @param {setStateAction, boolean, requestCallback} props
+ * @returns dialog/modal window to add new expense
+ */
 function ExpenseDialog(props) {
   const data = new Data();
   const { onClose, open, onUpdateExpense } = props;
@@ -36,9 +45,15 @@ function ExpenseDialog(props) {
     data.date = event.target.value;
   };
   const handleChangeCost = (event) => {
+    if (event.target.value < 0) {
+      alert("The cost must be positive number!");
+      event.target.value = "";
+      return;
+    }
     data.cost = event.target.value;
   };
 
+  // add new expense to local storage and upadates the state of expenses
   const handleAddItem = async () => {
     if (!validate()) {
       alert('All fields must be filled !!');
@@ -50,23 +65,16 @@ function ExpenseDialog(props) {
     onClose(true);
   };
 
+  // checks if all fields are filled
   const validate = () => {
-    if (!data.category || !data.cost || !data.date || !data.title)
-      return false;
+    if (!data.category || !data.cost || !data.date || !data.title) return false;
     return true;
   };
 
   return (
     <Dialog onClose={handleClose} open={open}>
-      <DialogTitle
-        style={dialogTitleStyle}
-      >
-        Add New Expense
-      </DialogTitle>
-      <DialogContent
-        style={dialogStyle}
-        dividers
-      >
+      <DialogTitle style={dialogTitleStyle}>Add New Expense</DialogTitle>
+      <DialogContent style={dialogStyle} dividers>
         <FormGroup>
           <TextField
             id="title"
@@ -80,6 +88,7 @@ function ExpenseDialog(props) {
           <TextField
             id="cost"
             label="Cost"
+            labelid="cost-label"
             variant="standard"
             type="number"
             InputProps={{
@@ -112,13 +121,17 @@ function ExpenseDialog(props) {
             id="date"
             type="date"
             variant="standard"
+            labelid="date-label"
             onChange={handleChangeDate}
             style={inputInlineStyles}
             color="warning"
+            InputProps={{
+              inputProps: { min: "2015-01-01", max: "2025-12-31" },
+            }}
           />
         </FormGroup>
       </DialogContent>
-      <DialogActions style={{ backgroundColor: "#666" }}>
+      <DialogActions style={{ backgroundColor: "#222" }}>
         <Button
           autoFocus
           onClick={handleAddItem}

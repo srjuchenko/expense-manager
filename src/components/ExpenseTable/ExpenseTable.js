@@ -13,6 +13,11 @@ import TableRows from "./TableRows";
 import { cellStyleHead } from "../../utils/inlinestyles";
 import "./ExpenseTable.css";
 
+/**
+ *
+ * @param {list} props
+ * @returns component with table that shows expenses data
+ */
 function ExpenseTable(props) {
   return (
     <Paper

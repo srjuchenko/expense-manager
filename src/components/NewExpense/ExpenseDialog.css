@@ -3,8 +3,8 @@
   Sergey Juchenko 319365102
 */
 .MuiInputBase-input {
-  color: #fff !important;
-  font-size: 22px !important;
+  color: #fb8217 !important;
+  font-size: 18px !important;
 }
 
 .MuiInputBase-input::selection {
@@ -13,4 +13,11 @@
 
 #category-label {
   color: #000;
+}
+
+#title-label,
+#cost-label,
+#category-label,
+#date-label {
+  color: #fb811798;
 }

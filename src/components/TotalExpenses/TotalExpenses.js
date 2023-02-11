@@ -5,11 +5,9 @@
 import "./TotalExpenses.css";
 
 /**
- *
- * @param {number} total expenses
+ * @param {number} props
  * @returns component that shows the total expenses
  */
-
 function TotalExpenses(props) {
   return (
     <div className="total-expenses">

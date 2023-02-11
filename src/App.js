@@ -1,3 +1,8 @@
+/*
+  Moshe Frankipour 206196693
+  Sergey Juchenko 319365102
+*/
+
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Storage from "./utils/storage";

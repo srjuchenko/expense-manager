@@ -4,19 +4,37 @@
 */
 import "./Chart.css";
 import { CATEGORIES } from "../../utils/consts";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
-const data = (expenses) => {
-  let data = []
-  CATEGORIES.forEach(cat => {
-    const total = expenses.filter(expense => expense.category == cat)
-      .reduce((sum, current) => sum + Number(current.cost), 0)
-    data.push({ name: cat, total: total })
-  });
-  return data
-}
-
+/**
+ * @param {} props
+ * @returns component with bar plot chart of total expenses for each category
+ */
 function Chart(props) {
+  /**
+   * helping function for chart data, returns a list with total epxenses for each category.
+   * @param {list} expenses
+   * @returns list
+   */
+  const data = (expenses) => {
+    let data = [];
+    CATEGORIES.forEach((cat) => {
+      const total = expenses
+        .filter((expense) => expense.category == cat)
+        .reduce((sum, current) => sum + Number(current.cost), 0);
+      data.push({ name: cat, total: total });
+    });
+    return data;
+  };
+
   return (
     <div className="pie-chart">
       <ResponsiveContainer width="100%" height="100%">

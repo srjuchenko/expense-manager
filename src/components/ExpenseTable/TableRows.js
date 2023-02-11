@@ -6,7 +6,12 @@ import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import { cellStyleRow } from "../../utils/inlinestyles";
 
+/**
+ * @param {list} props
+ * @returns list of table rows with expenses info (condition component)
+ */
 function tableRows(props) {
+  // if there are no expenses (the list is empty)returns a row with message
   if (props.expenses.length === 0) {
     return (
       <TableRow
