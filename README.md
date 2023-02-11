@@ -1,5 +1,5 @@
 # Expenses Manager
-![image](https://i.imgflip.com/7atbpq.gif)
+![image](https://i.imgflip.com/7atis4.gif)
 ![image](https://user-images.githubusercontent.com/76474133/218277400-de15acc7-fc1f-4f67-83f4-9d77fb001916.png)
 ![image](https://user-images.githubusercontent.com/76474133/218277408-7334b3c8-4f76-4202-bd0c-64e1c361a8b4.png)
 
