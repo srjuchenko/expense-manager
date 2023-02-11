@@ -41,7 +41,7 @@ function ExpenseDialog(props) {
 
   const handleAddItem = async () => {
     if (!validate()) {
-      alert("All fields must be filled !!");
+      alert('All fields must be filled !!');
       return;
     }
     await Storage.addItem(data);

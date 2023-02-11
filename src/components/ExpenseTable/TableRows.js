@@ -18,7 +18,7 @@ function tableRows(props) {
         }}
       >
         <TableCell></TableCell>
-        <TableCell sx={cellStyleRow}>{"there are no expenses"}</TableCell>
+        <TableCell sx={cellStyleRow}>{'there are no expenses'}</TableCell>
       </TableRow>
     );
   } else {

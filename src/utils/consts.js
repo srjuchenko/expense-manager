@@ -3,18 +3,18 @@
   Sergey Juchenko 319365102
 */
 export const MONTHS = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ];
 
 export const YEARS = Array.from(
@@ -22,4 +22,4 @@ export const YEARS = Array.from(
   (_, index) => 2015 + index * 1
 );
 
-export const CATEGORIES = ["Food", "Car", "Bills", "Clothes", "Pets"];
+export const CATEGORIES = ['Food', 'Car', 'Bills', 'Clothes', 'Pets'];
