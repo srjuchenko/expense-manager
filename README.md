@@ -1,7 +1,7 @@
 # Expense Manager
 
-<!-- TODO -->
-<img src="#" alt="page" />
+<img src="./assets/page.jpeg" alt="page" />
+<img src="./assets/add-new-expense.jpeg" alt="add-new-expense" />
 
 ## Component Tree
 
