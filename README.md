@@ -35,7 +35,7 @@ Your app is ready to be deployed!
 
 ## Demo
 
-Click -> [:desktop_computer:](https://expense-manager-hit.netlify.app/)
+Click -> [:desktop_computer:](https://expenses-manager-hit.netlify.app/)
 
 ## Team
 
