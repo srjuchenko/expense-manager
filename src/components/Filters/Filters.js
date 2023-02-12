@@ -4,7 +4,6 @@
 */
 import { useState } from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import Storage from "../../utils/storage";
 import "./Filters.css";
 import Box from "@mui/material/Box";
 import { MONTHS, YEARS } from "../../utils/consts";
@@ -17,27 +16,21 @@ import { selectStyles, labelStyles } from "../../utils/inlinestyles";
 function Filters(props) {
   const [value, setValue] = useState({ year: -1, month: -1 });
 
-  // clear the filtering options and show all expenses
-  const clear = async (onUpdateExpense, setValue) => {
-    const data = await Storage.getItems();
-    onUpdateExpense(data);
+  // clear the criterias of filtering (-1 means to show all months/years)
+  const clear = (onFilterExpenses) => {
+    onFilterExpenses(-1, -1);
     setValue({ year: -1, month: -1 });
   };
 
-  // show expenses by specific month/year
-  const updateFilter = async (onUpdateExpense, value) => {
-    let data = await Storage.getItems();
-    if (value.year !== -1)
-      data = data.filter((d) => new Date(d.date).getFullYear() == value.year);
-    if (value.month !== -1)
-      data = data.filter((d) => new Date(d.date).getMonth() == value.month);
-    onUpdateExpense(data);
+  // send the values to app component to show expenses by specific month/year
+  const updateFilter = (onFilterExpenses, value) => {
+    onFilterExpenses(value.year, value.month);
   };
 
   return (
     <div className="filters">
       <button
-        onClick={() => clear(props.onUpdateExpense, setValue)}
+        onClick={() => clear(props.onFilterExpenses)}
         className="my-btn show-all"
       >
         SHOW ALL EXPENSES
@@ -100,7 +93,7 @@ function Filters(props) {
           </FormControl>
         </Box>
         <button
-          onClick={() => updateFilter(props.onUpdateExpense, value)}
+          onClick={() => updateFilter(props.onFilterExpenses, value)}
           className="my-btn"
         >
           FILTER
