@@ -16,8 +16,8 @@ import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 function App() {
   const [expenses, setExpenses] = useState([]);
   const [filteredExpenses, setFilteredExpenses] = useState([]);
-  const [year, setYear] = useState(-1);
-  const [month, setMonth] = useState(-1);
+  const [yearState, setYear] = useState(-1);
+  const [monthState, setMonth] = useState(-1);
 
   // get data from local storage and init the states
   useEffect(() => {
@@ -31,7 +31,7 @@ function App() {
   const updateExpenseHandler = async (expense) => {
     setExpenses((expenses) => [expense, ...expenses]);
 
-    filteredExpensesHandler(year, month, expense);
+    filteredExpensesHandler(yearState, monthState, expense);
     await Storage.addItem(expense);
   };
 
