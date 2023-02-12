@@ -15,19 +15,47 @@ import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 
 function App() {
   const [expenses, setExpenses] = useState([]);
+  const [filteredExpenses, setFilteredExpenses] = useState([]);
+  const [yearState, setYear] = useState(-1);
+  const [monthState, setMonth] = useState(-1);
 
-  /**
-   * init data
-   */
+  // get data from local storage and init the states
   useEffect(() => {
     (async () => {
-      let response = await Storage.getItems();
+      const response = await Storage.getItems();
       setExpenses(response);
+      setFilteredExpenses(response);
     })();
   }, []);
 
-  const updateExpenseHandler = (expenses) => {
-    setExpenses(expenses);
+  const updateExpenseHandler = async (expense) => {
+    setExpenses((expenses) => [expense, ...expenses]);
+
+    filteredExpensesHandler(yearState, monthState, expense);
+    await Storage.addItem(expense);
+  };
+
+  // updates the state of filtered data ("-1" means to show all months/years)
+  const filteredExpensesHandler = (year, month, expense = null) => {
+    setYear(year);
+    setMonth(month);
+
+    let filteredData = expenses;
+    if (expense) {
+      filteredData = [expense, ...expenses];
+    }
+
+    if (year !== -1) {
+      filteredData = filteredData.filter(
+        (d) => new Date(d.date).getFullYear() === year
+      );
+    }
+    if (month !== -1) {
+      filteredData = filteredData.filter(
+        (d) => new Date(d.date).getMonth() === month
+      );
+    }
+    setFilteredExpenses(filteredData);
   };
 
   return (
@@ -39,17 +67,17 @@ function App() {
             <h1 className="app-title">Expenses Manager</h1>
           </div>
           <TotalExpenses
-            expenses={expenses.reduce((sum, a) => sum + Number(a.cost), 0)}
+            total={filteredExpenses.reduce((sum, a) => sum + Number(a.cost), 0)}
           />
           <NewExpense onUpdateExpense={updateExpenseHandler} />
         </div>
-        <Chart expenses={expenses} />
+        <Chart expenses={filteredExpenses} />
       </div>
       <div className="filters">
-        <Filters onUpdateExpense={updateExpenseHandler} />
+        <Filters onFilterExpenses={filteredExpensesHandler} />
       </div>
       <div className="bottom">
-        <ExpenseTable expenses={expenses} />
+        <ExpenseTable expenses={filteredExpenses} />
       </div>
     </div>
   );
